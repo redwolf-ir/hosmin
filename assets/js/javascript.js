@@ -9,6 +9,12 @@ tl.fromTo(
   0
 )
   .fromTo(
+    ".intro h3",
+    { opacity: 0, y: -50 },
+    { duration: 2.5, opacity: 1, y: 0, ease: Power2.easeInOut },
+    0
+  )
+  .fromTo(
     ".svgs",
     { opacity: 0 },
     { duration: 6, opacity: 1, ease: Power2.easeInOut },
@@ -53,24 +59,6 @@ $("#wrapper").fullpage({
       alert("hello");
     }
   },
-});
-
-/* FULLPAGE SETUP
-=========================== */
-const childSplit = new SplitText(".content h3", {
-  type: "lines",
-  linesClass: "split-child",
-});
-const parentSplit = new SplitText(".content h3", {
-  // type: "lines",
-  linesClass: "split-parent",
-});
-gsap.from(childSplit.lines, {
-  duration: 4.5,
-  yPercent: 100,
-  ease: "power4",
-  stagger: 0.1,
-  delay: 1.5,
 });
 
 /* FULLPAGE SETUP
