@@ -60,7 +60,7 @@ ul {
   background: transparent url("../img/noise.jpg") repeat 0 0;
   background-repeat: repeat;
   animation: bg-animation 0.2s infinite;
-  opacity: 0.15;
+  opacity: 0.2;
   visibility: visible;
   z-index: -1;
 }
@@ -199,6 +199,17 @@ ul {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+/* 
+video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0.1;
+} */
 
 .flex-fiftyfifty {
   display: flex;
@@ -480,6 +491,11 @@ ul {
   }
 }
 
+.main-carousel {
+  width: 100%;
+  height: auto;
+}
+
 .carousel-cell {
   width: 23.5%; /* full width */
   margin-right: 2%;
@@ -583,7 +599,7 @@ ul {
   align-items: center;
 }
 
-.featured::before {
+/* .featured::before {
   content: "";
   position: absolute;
   top: 0;
@@ -595,7 +611,7 @@ ul {
   background: url("../img/crimson_flower-1440x900.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-}
+} */
 
 .flex-featured {
   width: 100%;
@@ -605,14 +621,59 @@ ul {
   align-items: center;
 }
 
+@media only screen and (max-width: 721px) {
+  .flex-featured {
+    flex-direction: column;
+  }
+}
+
 .featured .content {
   width: 60%;
-  background-color: red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 721px) {
+  .featured .content {
+    width: 100%;
+  }
+}
+
+.featured .content h3 {
+  display: inline-block;
+  font-family: "Judson", serif;
+  font-style: italic;
+  font-size: 1.4vw;
+  letter-spacing: 4px;
+  padding: 8px;
+  background-color: #13cb39;
+  margin-top: 8px;
+  text-align: center;
+  order: 2;
+  opacity: 0.5;
+}
+
+@media only screen and (max-width: 721px) {
+  .featured .content h3 {
+    font-size: 3.4vw;
+  }
 }
 
 .featured-stuff {
   width: 40%;
-  background-color: red;
+}
+
+@media only screen and (max-width: 721px) {
+  .featured-stuff {
+    width: 30%;
+  }
+}
+@media only screen and (max-width: 481px) {
+  .featured-stuff {
+    width: 60%;
+  }
 }
 
 .curly-line-2 {
@@ -625,4 +686,339 @@ ul {
   width: 220px;
   height: auto;
   fill: white;
+}
+
+.curly-line-3 {
+  position: absolute;
+  bottom: 30%;
+  left: 10%;
+}
+.curly-line-3 svg {
+  width: 280px;
+  height: auto;
+}
+
+@media only screen and (max-width: 721px) {
+  .curly-line-3 {
+    bottom: 50%;
+    left: 10%;
+  }
+  .curly-line-3 svg {
+    width: 180px;
+  }
+}
+@media only screen and (max-width: 481px) {
+  .curly-line-3 {
+    display: none;
+  }
+}
+
+.curly-line-4 {
+  position: absolute;
+  top: 20%;
+  right: 5%;
+}
+.curly-line-4 svg {
+  width: 360px;
+  height: auto;
+}
+
+@media only screen and (max-width: 721px) {
+  .curly-line-4 svg {
+    width: 160px;
+  }
+}
+@media only screen and (max-width: 481px) {
+  .curly-line-4 {
+    display: none;
+  }
+}
+
+#countdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#countdown li {
+  display: inline-block;
+  font-size: 1.5vw;
+  list-style-type: none;
+  padding: 1em;
+  font-family: "Judson", serif;
+  text-transform: uppercase;
+  text-align: center;
+  color: #13cb39;
+  font-style: italic;
+}
+@media only screen and (max-width: 721px) {
+  #countdown li {
+    font-size: 3vw;
+  }
+}
+#countdown li span {
+  font-family: "Judson", serif;
+  display: block;
+  font-size: 5.5vw;
+  color: white;
+}
+
+.featured picture {
+  display: block;
+  width: 100%;
+  padding: 4%;
+  box-sizing: border-box;
+}
+
+.featured picture img {
+  height: auto;
+  max-width: 100%;
+  opacity: 0.5;
+}
+
+/* NEW RELEASE SECTION
+=========================== */
+.new-release {
+  z-index: 1;
+  color: white;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.flex-newRelease {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+@media only screen and (max-width: 481px) {
+  .flex-newRelease {
+    flex-direction: column;
+  }
+}
+
+.new-release .content {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (max-width: 961px) {
+  .new-release .content {
+    width: 60%;
+  }
+}
+@media only screen and (max-width: 481px) {
+  .new-release .content {
+    width: 100%;
+  }
+}
+
+.album-info {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media only screen and (max-width: 961px) {
+  .album-info {
+    width: 40%;
+  }
+}
+@media only screen and (max-width: 481px) {
+  .album-info {
+    width: 100%;
+  }
+}
+.album-info picture {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 2%;
+}
+@media only screen and (max-width: 481px) {
+  .album-info picture {
+    display: none;
+  }
+}
+.album-info picture img {
+  max-width: 100%;
+  height: auto;
+  opacity: 0.5;
+  transition: all 0.5s ease-in-out;
+}
+.album-info picture img:hover {
+  opacity: 1;
+}
+.album-info ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+.album-info ul li h6 {
+  font-family: "Judson", serif;
+  font-style: italic;
+  color: #13cb39;
+  font-size: 1vw;
+}
+.album-info ul li a {
+  font-family: "Judson", serif;
+  font-style: italic;
+  color: white;
+  font-size: 1vw;
+  background-color: black;
+  padding: 4px 8px;
+  transition: all 0.3s ease-in-out;
+}
+.album-info ul li a:hover {
+  color: black;
+  background-color: #13cb39;
+}
+@media only screen and (max-width: 961px) {
+  .album-info ul li h6 {
+    font-size: 1.2vw;
+  }
+  .album-info ul li a {
+    font-size: 1.2vw;
+  }
+}
+@media only screen and (max-width: 481px) {
+  .album-info ul li h6 {
+    font-size: 3.2vw;
+  }
+  .album-info ul li a {
+    font-size: 3.2vw;
+  }
+}
+
+.new-release .content h2 {
+  font-family: "Archivo Black", sans-serif;
+  font-style: italic;
+  color: #13cb39;
+  letter-spacing: -3px;
+  font-size: 3.5vw;
+  overflow: hidden;
+}
+@media only screen and (max-width: 481px) {
+  .new-release .content h2 {
+    font-size: 6.5vw;
+    letter-spacing: -2px;
+  }
+}
+
+.new-release .content span {
+  display: inline-block;
+  font-family: "Judson", serif;
+  font-style: italic;
+  color: white;
+  letter-spacing: -3px;
+  font-size: 3vw;
+  overflow: hidden;
+  margin-top: -30px;
+}
+@media only screen and (max-width: 961px) {
+  .new-release .content span {
+    margin-top: -10px;
+  }
+}
+@media only screen and (max-width: 481px) {
+  .new-release .content span {
+    font-size: 6vw;
+    margin-top: -3px;
+    letter-spacing: -1px;
+  }
+}
+.new-release .content ul {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 4%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+@media only screen and (max-width: 481px) {
+  .new-release .content ul {
+    padding: 0;
+    margin-top: 16px;
+  }
+}
+
+.new-release .content li {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  border-bottom: 1px solid #13cb3844;
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+}
+.new-release .content li:last-child {
+  border-bottom: none;
+}
+/* .new-release .content li h5::before {
+  content: "-";
+  font-weight: bolder;
+  color: #13cb39;
+  margin-right: 8px;
+} */
+.new-release .content li h5 {
+  font-family: "Judson", serif;
+  font-weight: lighter;
+  color: white;
+  font-size: 1.5vw;
+  letter-spacing: 2px;
+  order: 2;
+}
+@media only screen and (max-width: 481px) {
+  .new-release .content li h5 {
+    font-size: 4.5vw;
+  }
+}
+.new-release .content li .details {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  align-items: center;
+}
+.new-release .content li .details i {
+  order: 1;
+  text-align: center;
+  background-color: #13cb39;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Judson", serif;
+  font-weight: lighter;
+  font-size: 0.8vw;
+  padding: 4px 8px;
+  box-sizing: border-box;
+  margin-right: 16px;
+}
+.new-release .content li .details i .day {
+  font-size: 1.3vw;
+  font-weight: bolder;
+}
+@media only screen and (max-width: 961px) {
+  .new-release .content li .details i {
+    font-size: 1.2vw;
+  }
+  .new-release .content li .details i .day {
+    font-size: 2.3vw;
+  }
+}
+@media only screen and (max-width: 481px) {
+  .new-release .content li .details i {
+    font-size: 2.2vw;
+  }
+  .new-release .content li .details i .day {
+    font-size: 3.3vw;
+  }
 }
