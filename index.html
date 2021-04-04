@@ -19,14 +19,22 @@
   </head>
   <body>
     <div class="noise"></div>
-    <!-- <nav class="top-navigation">
-      <div class="container">fixed nav</div>
-    </nav> -->
+    <nav class="top-navigation">
+      <div class="container">
+        <div class="flex-nav">
+          <i class="logo"
+            ><h1>hossein amin</h1>
+            <a href="#intro"><img src="./assets/img/logo.png" alt=""
+              /></a></i>
+          <div class="hamburger-menu">
+            <button  onclick="openNav();"><span>MENU</span> &#9776;</button>
+        </div>
+      </div>
+    </nav>
     <div id="wrapper">
-      <section class="section intro">
+      <section class="section intro" data-anchor="intro">
         <div class="container flex-fiftyfifty">
           <aside class="content">
-            <h1>HOSSEIN AMIN</h1>
             <h3>
               <em id="hos_H">H</em><em id="hos_O">O</em
               ><em id="hos_S">S</em>SEIN
@@ -36,6 +44,11 @@
               >
             </h3>
             <h2>Music Producer</h2>
+            <ul>
+              <li><a href="#about-me">ABOUT ME</a></li>
+              <li><a href="#new-release">RELEASE</a></li>
+              <li><a href="#works">BUY BEATS</a></li>
+            </ul>
           </aside>
           <picture>
             <img
@@ -133,7 +146,7 @@
             <defs /></svg
         ></i>
       </section>
-      <section class="section featured">
+      <section class="section featured" data-anchor="featured">
         <div class="container">
           <div class="flex-featured">
             <div class="featured-stuff">
@@ -228,7 +241,7 @@
             <defs /></svg
         ></i>
       </section>
-      <section class="section works">
+      <section class="section works" data-anchor="works">
         <div class="container">
           <div class="flex-works">
             <div class="content">
@@ -323,7 +336,7 @@
           </i>
         </div>
       </section>
-      <section class="section new-release">
+      <section class="section new-release" data-anchor="new-release">
         <div class="container">
           <div class="flex-newRelease">
             <div class="content">
@@ -407,11 +420,65 @@
           </div>
         </div>
       </section>
-      <section class="section"></section>
+      <section class="section about-me" data-anchor="about-me">
+        <div class="container">
+          <div class="flex-aboutMe">
+            <div class="aboutme-content">
+              <h3>PASSION NEVER DIE. IT GROWS</h3>
+              <h4>STAY HUNGRY AND STRONG</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut malesuada vitae nulla sit amet blandit. Pellentesque sit amet interdum diam. In non arcu non dolor iac ulis tincidunt id ac mauris. Donec vulputate tortor lorem. Suspendisse gravida mattis leo. Suspendisse potenti. Fusce finibus magna sit amet malesuada lobortis. Etiam in consequat augue, ac faucibus massa. Nullam commodo libero sit amet dictum mattis. Donec facilisis pretium risus, semper vehicula magna convallis nec.              </p>
+              <div class="about-me-logo">
+                <img src="./assets/img/logo.png" alt="">
+              </div>
+            </div>
+            <picture><img src="assets/img/glitch.gif" alt=""></picture>
+            <div class="contact-me">
+              <h3>Contact me</h3>
+              <form action="action_page.php">
+
+                <div class="field">
+                  <label for="fname">First Name</label>
+                  <input type="text" id="fname" name="firstname" >
+                </div>
+            
+                <div class="field">
+                  <label for="lname">Last Name</label>
+                  <input type="text" id="lname" name="lastname">
+                </div>
+
+                <div class="field">
+                  <label for="subject">Subject</label>
+                  <textarea id="subject" name="subject"></textarea>
+                </div>
+            
+                <input class="submit" type="submit" value="Submit">
+            
+              </form>
+            </div>
+          </div>
+          <div class="container">
+            <ul>
+              <li><a href="#">SOUNDCLOUD</a></li>
+              <li><a href="#">INSTAGRAM</a></li>
+              <li><a href="#">YOUTUBE</a></li>
+              <li><a href="#">FACEBOOK</a></li>
+            </ul>
+          </div>
+        </div>
+        <i class="redwolf">
+          <a href="#">redwolf</a>
+        </i>
+      </section>
     </div>
-    <!-- <nav class="bottom-navigation">
-      <div class="container">fixed nav</div>
-    </nav> -->
+    <div id="myNav" class="overlay">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <div class="overlay-content">
+        <a href="#about-me" onclick="closeNav();">About</a>
+        <a href="#new-release" onclick="closeNav();">Release Dates</a>
+        <a href="#works" onclick="closeNav();">Buy Beats</a>
+      </div>
+    
+    </div>
 
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
