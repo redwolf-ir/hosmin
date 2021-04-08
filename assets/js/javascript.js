@@ -23,11 +23,17 @@ tl.fromTo(
   .fromTo(
     ".intro picture img",
     { opacity: 0, x: -300 },
+    { duration: 2, opacity: 1, x: 0, ease: Power2.easeInOut },
+    0
+  )
+  .fromTo(
+    ".intro-links",
+    { opacity: 0, x: 300 },
     { duration: 2.5, opacity: 1, x: 0, ease: Power2.easeInOut },
     0
   )
   .fromTo(
-    ".intro ul",
+    ".intro-socials",
     { opacity: 0, x: 300 },
     { duration: 3, opacity: 1, x: 0, ease: Power2.easeInOut },
     0
@@ -52,53 +58,55 @@ $("#wrapper").fullpage({
   scrollHorizontally: true,
   fadingEffect: true,
   responsiveHeight: 435,
-  anchors: ["intro", "featured", "works", "new-release", "about-me"],
+  scrollingSpeed: 1200,
+  anchors: ["intro", "latest-release", "beats", "contact"],
 
   onLeave: function (index, nextIndex, direction) {
     if (index == 1 && nextIndex == 2) {
-      $(".bottom-to-top").addClass("visible");
-      gsap.fromTo(
-        ".bottom-to-top",
-        { opacity: 0, y: 200 },
-        { duration: 1, opacity: 1, y: 0, ease: Power2.easeInOut },
-        0
-      );
       gsap.fromTo(
         ".top-navigation",
         { opacity: 0, y: -100 },
         { duration: 1, opacity: 1, y: 0, ease: Power2.easeInOut },
         0
       );
-      gsap.fromTo(
-        ".curly-line-3",
+      var t8 = gsap.timeline();
+
+      t8.fromTo(
+        ".latest-release .content h2",
         { opacity: 0, x: -50 },
-        { duration: 2, opacity: 1, x: 0, ease: Power2.easeInOut },
+        { duration: 1.5, opacity: 1, x: 0, ease: Power2.easeInOut },
         0
-      );
-      gsap.fromTo(
-        ".curly-line-4",
-        { opacity: 0, x: 50 },
-        { duration: 2, opacity: 1, x: 0, ease: Power2.easeInOut },
-        0
-      );
-      gsap.fromTo(
-        "#countdown",
-        { opacity: 0, y: -100 },
-        { duration: 2, opacity: 1, y: 0, ease: Power2.easeInOut },
-        0
-      );
-      gsap.fromTo(
-        ".featured picture",
-        { opacity: 0, y: 100 },
-        { duration: 2, opacity: 1, y: 0, ease: Power2.easeInOut },
-        0
-      );
-      gsap.fromTo(
-        ".featured .content h3",
-        { opacity: 0, scale: 1.5 },
-        { duration: 2, opacity: 1, scale: 1, ease: Power2.easeInOut },
-        0
-      );
+      )
+        .fromTo(
+          ".latest-release .content span",
+          { opacity: 0, x: 50 },
+          { duration: 1.5, opacity: 1, x: 0, ease: Power2.easeInOut },
+          0
+        )
+        .fromTo(
+          ".latest-release .content ul",
+          { opacity: 0, x: 150 },
+          { duration: 2.5, opacity: 1, x: 0, ease: Power2.easeInOut },
+          0
+        )
+        .fromTo(
+          ".spotify-content",
+          { opacity: 0, x: -150 },
+          { duration: 2.5, opacity: 1, x: 0, ease: Power2.easeInOut },
+          0
+        )
+        .fromTo(
+          ".spotify-content",
+          { opacity: 0, x: -150 },
+          { duration: 2.5, opacity: 1, x: 0, ease: Power2.easeInOut },
+          0
+        )
+        .fromTo(
+          ".curly-line-5",
+          { opacity: 0, y: 250 },
+          { duration: 2.5, opacity: 1, y: 0, ease: Power2.easeInOut },
+          0
+        );
     } else if (index == 2 && nextIndex == 3) {
       gsap.fromTo(
         ".top-navigation",
@@ -106,53 +114,27 @@ $("#wrapper").fullpage({
         { duration: 1, opacity: 1, y: 0, ease: Power2.easeInOut },
         0
       );
-      var t2 = gsap.timeline();
+      var t5 = gsap.timeline();
 
-      t2.fromTo(
-        ".works .content",
+      t5.fromTo(
+        ".beats .content",
         { opacity: 0, x: -50 },
         { duration: 2, opacity: 1, x: 0, ease: Power2.easeInOut },
         0
-      ).fromTo(
-        ".last_works",
-        { opacity: 0, y: 100 },
-        { duration: 2, delay: 1, opacity: 1, y: 0, ease: Power2.easeInOut },
-        0
-      );
-    } else if (index == 3 && nextIndex == 4) {
-      gsap.fromTo(
-        ".top-navigation",
-        { opacity: 0, y: -100 },
-        { duration: 1, opacity: 1, y: 0, ease: Power2.easeInOut },
-        0
-      );
-      var t3 = gsap.timeline();
-
-      t3.fromTo(
-        ".new-release .content h2",
-        { opacity: 0, x: -50 },
-        { duration: 1.5, opacity: 1, x: 0, ease: Power2.easeInOut },
-        0
       )
         .fromTo(
-          ".new-release .content span",
-          { opacity: 0, x: 50 },
-          { duration: 1.5, opacity: 1, x: 0, ease: Power2.easeInOut },
-          0
-        )
-        .fromTo(
-          ".new-release .content ul",
-          { opacity: 0, x: 150 },
-          { duration: 2.5, opacity: 1, x: 0, ease: Power2.easeInOut },
-          0
-        )
-        .fromTo(
-          ".album-info",
-          { opacity: 0, y: 150 },
+          ".curly-line-2",
+          { opacity: 0, y: 50 },
           { duration: 2.5, opacity: 1, y: 0, ease: Power2.easeInOut },
           0
+        )
+        .fromTo(
+          ".last_beats",
+          { opacity: 0, y: 100 },
+          { duration: 2, opacity: 1, y: 0, ease: Power2.easeInOut },
+          0
         );
-    } else if (index == 4 && direction == "down") {
+    } else if (index == 3 && direction == "down") {
       gsap.fromTo(
         ".top-navigation",
         { opacity: 0, y: -100 },
@@ -207,6 +189,16 @@ $(".main-carousel").flickity({
   // prevNextButtons: false,
 });
 
+$(".main-carousel-beats").flickity({
+  // options
+  cellAlign: "left",
+  contain: true,
+  pageDots: true,
+  prevNextButtons: true,
+  imagesLoaded: true,
+  // prevNextButtons: false,
+});
+
 $("#hos_H").click(function () {
   $(this).addClass("make-it-active");
   $("#hos_O")
@@ -253,6 +245,19 @@ $("#hos_H").click(function () {
                         repeat: -1,
                         ease: "none",
                       });
+                      gsap.fromTo(
+                        ".st0",
+                        { opacity: 0.5 },
+                        {
+                          duration: 1,
+                          opacity: 1,
+                          fill: "#ff0000",
+                          yoyo: true,
+                          repeat: -1,
+                          ease: Power2.easeInOut,
+                        },
+                        0
+                      );
                       gsap.to(".intro h2", {
                         duration: 0.1,
                         scale: 1.1,
